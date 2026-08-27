@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import ExpenseForm,LoginForm,RegisterForm
 from .models import Expense
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.views.generic import ListView,CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
@@ -27,6 +27,10 @@ def LoginView(request):
     else:
         form=LoginForm()
     return render(request,'login.html',{'form':form})
+
+def LogoutView(request):
+    logout(request)
+    return redirect('login')
 
 def RegisterView(request):
     if request.method=='POST':

@@ -8,7 +8,10 @@
 <body>
     <h1>Welcome To Home Page</h1>
     <hr>
-    Go To Expenses: <a href="{% url 'list' %}">Expenses</a>
+    <p>If you want to see your Expenses, Login first: </p>
+    <a href="{% utl 'login' %}">Login</a>
+
+    Dont have an account? <a href="{% url 'register' %}">Register Here</a>
 </body>
 </html>
 
