@@ -8,5 +8,6 @@ urlpatterns = [
     path('list/',ListExpense.as_view(),name='list'),
     path('add/',CreateExpense.as_view(),name='add'),
     path('edit/<int:pk>/',UpdateExpense.as_view(),name='edit'),
-    path('delete/<int:pk>/',DeleteExpense.as_view(),name='delete')
+    path('delete/<int:pk>/',DeleteExpense.as_view(),name='delete'),
+    path('logout/',views.LogoutView,name='logout')
 ]
