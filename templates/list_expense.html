@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Expense</title>
+</head>
+<body>
+    <h1>Your Expense</h1>
+    Add Expense Here-> <a href="{% url 'add' %}">Add</a>
+
+    {% if expenses %}
+    {% for expense in expenses %}
+    <h2>Title:{{expense.title}}</h2>
+    <h3>Price:{{expense.price}}</h3>
+    <h3>Date:{{expense.date}}</h3>
+
+    want to make changes? <a href="{% url 'edit' expense.id %}">Edit</a>
+    <br>
+    want to delete expense? <a href="{% url 'delete' expense.id %}">Delete</a>
+    <hr>
+
+    {% endfor %}
+    {% else %}
+    <p>No Expenses Yet!!</p>
+    {% endif %}
+</body>
+</html>

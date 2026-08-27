@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Page</title>
+</head>
+<body>
+    <h1>Delete Your Expense</h1>
+    Are you sure you want to delete your expense <strong>{{objec.titl}}</strong>?
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit">
+            Yes,Delete
+        </button>
+    </form>
+</body>
+</html>
